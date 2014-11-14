@@ -1,0 +1,135 @@
+
+nav {
+  background-color: #B5DAFF;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+  color: #888;
+  display: block;
+  margin: 8px 22px 8px 22px;
+  overflow: hidden;
+  width: 90%; 
+}
+
+body {
+  background-color:#EAECF2;
+  color: #222;
+  font-family:'Ubuntu', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+
+}
+
+section{
+
+  padding: 10px;
+}
+
+form {
+    /*width: 350px;*/
+    margin: 0 auto;
+    /*padding: 30px;*/
+    text-align: center;
+
+}
+
+
+
+h1,h2,h3,h4,h5,h6{
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+select{
+
+  font-family: 'Ubuntu', sans-serif;
+}
+
+thead{
+    font-size: 20px;
+    text-align: center;
+}
+
+
+
+#div1{
+
+  width : 350px;
+  height: 70px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+  
+}
+
+
+
+
+
+output{
+
+font-size: large;
+
+}
+
+
+img 
+{
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    margin: auto;
+    display: block;
+}
+
+
+nav ul {
+    margin: 0;
+    padding: 0;
+  }
+
+    nav ul li {
+      display: inline-block;
+      list-style-type: none;
+      
+      -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        -ms-transition: all 0.2s;
+        -o-transition: all 0.2s;
+        transition: all 0.2s; 
+    }
+      
+      nav > ul > li > a > .caret {
+        border-top: 4px solid #aaa;
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+        content: "";
+        display: inline-block;
+        height: 0;
+        width: 0;
+        vertical-align: middle;
+  
+        -webkit-transition: color 0.1s linear;
+        -moz-transition: color 0.1s linear;
+        -o-transition: color 0.1s linear;
+          transition: color 0.1s linear; 
+      }
+
+      nav > ul > li > a {
+        color: #1919A3;
+        display: block;
+        line-height: 30px;
+        padding: 0 24px;
+        text-decoration: none;
+      }
+
+        nav > ul > li:hover {
+          background-color: #748BA3;
+        }
+
+        nav > ul > li:hover > a {
+          color: rgb( 255, 255, 255 );
+        }
+
+        nav > ul > li:hover > a > .caret {
+          border-top-color: rgb( 255, 255, 255 );
+        }
