@@ -42,12 +42,12 @@
 			 //      echo "</tr>";
 			 //    }
 
-			 //    echo "</table>";
+			 //    echo "</table>"; 
 			$url = "http://localhost/DAW/PD3/slim/display/articulos/"+$userId; //Route to the REST web service
 			$c = curl_init($url);
 			$response = curl_exec($c);
 			curl_close($c);
-
+				//no funciona
 			?>
 		
 		</div>
