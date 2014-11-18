@@ -1,5 +1,4 @@
 <?php
-//hola
 
 $connection=mysqli_connect("localhost","root","","PD3");
 		// Check connection
