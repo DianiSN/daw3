@@ -89,6 +89,7 @@ function fbLogout() {
 //Regresa el id del Usuario
 function fbId(){
   FB.api('/me', function(response) {
+  document.getElementById('user').value=response.id;
   console.log('listo: ' +response.id);
   return response.id; 
 });
