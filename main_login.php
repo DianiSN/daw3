@@ -25,11 +25,12 @@
 </table>
 </td>
 </form>
-<form name="form2" method="post" action="register.php">
+<form name="form2" method="post" action="">
 <td><input type="submit" name="Register" value="Register"></td>
 </form>
 <td>
 <script src="fb.js"></script>
+
 
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
