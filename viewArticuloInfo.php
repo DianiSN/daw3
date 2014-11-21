@@ -26,7 +26,7 @@
 							frameborder=\"0\" style=\"border:0\"
 							src=\"https://www.google.com/maps/embed/v1/search?key=AIzaSyCgpoQUbukp62MU1dzkpglRN6bd1e_ZYW0&q=".$direcc."\">
 						</iframe><br>";
-					echo "<br><br><br><br><br><input type=\"button\" class=\"pure-button pure-button-active\" action=\"sendRequestArticulo(".$row['articuloId'].")\" value=\"Contactá vendedor\"><br><br><br><br><br>";
+					echo "<br><br><br><br><br><a class=\"pure-button pure-button-active\" id=\"email\" href=\"mailto:example@website.com?subject=".$row['nombre']."\">Contactá vendedor</a><br><br><br><br><br>";
 		          
 		        }
 
