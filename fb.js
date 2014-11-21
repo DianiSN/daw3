@@ -9,6 +9,9 @@
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
       testAPI();
+      fbId();
+      fbName();
+      fbMail();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
       document.getElementById('status').innerHTML = 'Please log ' +
@@ -90,6 +93,20 @@ function fbLogout() {
 function fbId(){
   FB.api('/me', function(response) {
   console.log('listo: ' +response.id);
-  return response.id; 
+  document.getElementById('fbid').innerHTML = response.id; 
+});
+}
+
+function fbName(){
+   FB.api('/me', function(response) {
+  console.log('listo: ' +response.name);
+  document.getElementById('fbname').innerHTML = response.name;
+});
+}
+
+function fbMail(){
+   FB.api('/me', function(response) {
+  console.log('listo: tu mail');
+  document.getElementById('fbemail').innerHTML = 'tu mail';
 });
 }
