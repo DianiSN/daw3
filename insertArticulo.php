@@ -19,7 +19,7 @@ if (preg_match("/^[.áéíóúa-zA-Z0-9 ]*$/",$calle) && preg_match("/^[áéíó
     die('Error: ' . mysqli_error($connection));
   }else{
     echo $user;
-    //include('displayArticulo.php');
+    include('displayArticulo.php');
   }
         
 

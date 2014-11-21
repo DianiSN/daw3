@@ -35,12 +35,16 @@
 			
 			<?php
 				include_once('connection.php');
-				$userId=10152885393286882;
-				$userId=strtoupper($userId);
-				$usario = mysqli_real_escape_string($connection, $userId);
-		        $query=sprintf("SELECT `Articulo`.`nombre`, `Articulo`.`estadoArticulo`,`Articulo`.`descripcion`, `Articulo`.`calle`, `Estados`.`nombre` AS Estado, `Articulo`.`cuidad`, `Articulo`.`codigoPostal`,`Articulo`.`vendido`  
-		                                FROM Articulo, Estados WHERE `Estados`.`estadoId` = `Articulo`.`state` AND `Articulo`.`usuarioId` = '%s' ORDER BY `Articulo`.`vendido` ASC",mysql_real_escape_string($userId));                        
+				$userId="10152885393286882";				
+				//$userId=strtoupper($user);
 
+				//$usario = mysqli_real_escape_string($connection, $userId);
+		        $query="SELECT `Articulo`.`nombre`, `Articulo`.`estadoArticulo`,`Articulo`.`descripcion`, `Articulo`.`calle`, `Estados`.`nombre` AS Estado, `Articulo`.`cuidad`, `Articulo`.`codigoPostal`,`Articulo`.`vendido`  
+		                FROM Articulo, Estados 
+		                WHERE `Estados`.`estadoId` = `Articulo`.`state` AND `Articulo`.`usuarioId` = $userId";
+		         //var_dump($userId);                        
+		         //echo $query;
+		        
 		        $result = mysqli_query($connection,$query);
 
 		        echo "<table class=\"pure-table pure-table-bordered\">
