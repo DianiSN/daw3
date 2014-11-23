@@ -1,43 +1,37 @@
-<link rel="stylesheet" type="text/css" href="style.css"/>
-<table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
-<tr>
-<form name="form1" method="post" action="checklogin.php">
-<td>
-<table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
-<tr>
-<td colspan="3"><strong>Member Login </strong></td>
-</tr>
-<tr>
-<td width="78">Username</td>
-<td width="6">:</td>
-<td width="294"><input name="myusername" type="text" id="myusername"></td>
-</tr>
-<tr>
-<td>Password</td>
-<td>:</td>
-<td><input name="mypassword" type="password" id="mypassword"></td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><input type="submit" name="Submit" value="Login"></td>
-</tr>
-</table>
-</td>
+<?php
+	session_start();
+?>
+<form name="form3" method="post" action="checkface.php">
+<div id="fbname" name="fbname" hidden></div>
+<div id="fbid" name="fbid" hidden></div>
+<div id="fbemail" name="fbemail" hidden></div>
+<div id="fbstat" name="fbstat" hidden></div>
 </form>
-<form name="form2" method="post" action="">
-<td><input type="submit" name="Register" value="Register"></td>
-</form>
-<td>
+
+
+<link rel="stylesheet" type="text/css" href="style2.css"/>
+
+<div id="loginform">
+<div id="facebook"><i class="fa fa-facebook"></i><div id="connect">Connect with Facebook</div>
+
 <script src="fb.js"></script>
-
-
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
+</div>
 
-<div id="status">
+<div id="mainlogin">
+<div id="or">or</div>
+<h1>CompraTodo</h1>
+<form method="post" action="checklogin.php">
+<input name="myusername" id="myusername" type="text" placeholder="username" value="" required>
+<input name="mypassword" id="mypassword" type="password" placeholder="password" value="" required>
+<button type="submit"><i class="fa fa-arrow-right">Login</i></button>
+</form>
+</div>
+</div>
+<form name="form2" method="post" action="register.php">
+<td><input type="submit" name="Registrate!" value="Registrate!"></td>
+</form>
+<td>
 </div>
 </td>
-</tr>
-</table>
-<button onclick="fbId()">Click me</button>

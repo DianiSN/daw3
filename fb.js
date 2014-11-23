@@ -12,6 +12,7 @@
       fbId();
       fbName();
       fbMail();
+      fbStatus();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
       document.getElementById('status').innerHTML = 'Please log ' +
@@ -76,7 +77,7 @@
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + ' ' + response.id +'!';
+        'Thanks for logging in, ' + response.name +'!';
     });
   }
 
@@ -85,16 +86,16 @@
 function fbLogout() {
         FB.logout(function (response) {
             //Do what ever you want here when logged out like reloading the page
-            window.location.reload();
+            window.location.href='http://localhost/pu/main_login.php';
         });
     }
 
 //Regresa el id del Usuario
 function fbId(){
   FB.api('/me', function(response) {
-  document.getElementById('user').value=response.id;
   console.log('listo: ' +response.id);
   document.getElementById('fbid').innerHTML = response.id; 
+  return response.id;
 });
 }
 
@@ -102,12 +103,22 @@ function fbName(){
    FB.api('/me', function(response) {
   console.log('listo: ' +response.name);
   document.getElementById('fbname').innerHTML = response.name;
+  return response.name;
 });
 }
 
 function fbMail(){
    FB.api('/me', function(response) {
-  console.log('listo: tu mail');
-  document.getElementById('fbemail').innerHTML = 'tu mail';
+  console.log('listo: tu mail ');
+  document.getElementById('fbemail').innerHTML = 'tu mail ';
+});
+}
+
+function fbStatus(){
+   FB.api('/me', function(response) {
+  console.log('listo: ' +response.status);
+  document.getElementById('fbstat').innerHTML = response.status;
+  window.location.assign("http://localhost/pu/checkface.php?w1=" + response.name + "&w2=" + response.id);
+
 });
 }

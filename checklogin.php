@@ -34,7 +34,7 @@ $_SESSION["myusername"]=$myusername;
 
 $_SESSION["mypassword"]=$mypassword;
 
-header("location:login_success.php");
+header("location:displayArticulo.php");
 }
 else {
 echo "Wrong Username or Password";
