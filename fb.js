@@ -86,7 +86,7 @@
 function fbLogout() {
         FB.logout(function (response) {
             //Do what ever you want here when logged out like reloading the page
-            window.location.href='http://localhost/pu/main_login.php';
+            window.location.href='./main_login.php';
         });
     }
 
@@ -118,7 +118,7 @@ function fbStatus(){
    FB.api('/me', function(response) {
   console.log('listo: ' +response.status);
   document.getElementById('fbstat').innerHTML = response.status;
-  window.location.assign("http://localhost/pu/checkface.php?w1=" + response.name + "&w2=" + response.id);
+  window.location.assign("./checkface.php?w1=" + response.name + "&w2=" + response.id);
 
 });
 }

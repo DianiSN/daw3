@@ -28,7 +28,7 @@ $count=mysqli_num_rows($result);
 if($count==1){
 	echo ("<SCRIPT LANGUAGE='JavaScript'>
     window.alert('El usuario que ingreso ya existe')
-    window.location.href='http://localhost/pu/register.php';
+    window.location.href='./register.php';
     </SCRIPT>");
 	exit;
 }else{
@@ -41,7 +41,7 @@ $count2=mysqli_num_rows($result);
 if($count2==1){
 	echo ("<SCRIPT LANGUAGE='JavaScript'>
     window.alert('El mail que ingreso ya existe')
-    window.location.href='http://localhost/pu/register.php';
+    window.location.href='./register.php';
     </SCRIPT>");
 	exit;
 
@@ -55,7 +55,7 @@ if($mypassword==$myrepass){
 }else {
 	echo ("<SCRIPT LANGUAGE='JavaScript'>
     window.alert('Las contraseñas no coinciden')
-    window.location.href='http://localhost/pu/register.php';
+    window.location.href='./register.php';
     </SCRIPT>");
     exit;
 }
