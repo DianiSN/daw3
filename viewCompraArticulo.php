@@ -36,7 +36,7 @@
 			<?php
 				include_once('connection.php');
 				$userId=10152885393286882;
-				$query = "SELECT `Articulo`.`usuarioId`,`Articulo`.`articuloId`,`Articulo`.`nombre`, `Articulo`.`estadoArticulo`,`Articulo`.`descripcion`, `Articulo`.`calle`, `Estados`.`nombre` AS Estado, `Articulo`.`cuidad`, `Articulo`.`codigoPostal` FROM Articulo, Estados WHERE `Articulo`.`state` = `Estados`.`estadoId` AND `Articulo`.`vendido`=0";
+				$query = "SELECT `Articulo`.`usuarioId`,`Articulo`.`articuloId`,`Articulo`.`nombre`, `Articulo`.`estadoArticulo`,`Articulo`.`precio`,`Articulo`.`descripcion`, `Articulo`.`calle`, `Estados`.`nombre` AS Estado, `Articulo`.`cuidad`, `Articulo`.`codigoPostal` FROM Articulo, Estados WHERE `Articulo`.`state` = `Estados`.`estadoId` AND `Articulo`.`vendido`=0";
 
 
 		        $result = mysqli_query($connection,$query);
@@ -46,6 +46,7 @@
 		        <tr>
         		<th>Artículo</th>
         		<th>Estado</th>
+        		<th>Precio</th>
         		<th>Descripción</th>
         		<th>Ubicación</th>
         		<th>Disponibilidad</th>
@@ -57,6 +58,7 @@
 			          echo "<tr>";
 			          echo "<td>" . $row['nombre'] . "</td>";
 			          echo "<td>" . $row['estadoArticulo'] . "</td>";
+			          echo "<td>$" . $row['precio'] . " MXN</td>";
 			          echo "<td>" . $row['descripcion'] . "</td>";
 			          echo "<td>" . $row['calle'] . "<br>".$row['cuidad']. ",". $row['Estado']."<br>".$row['codigoPostal']."</td>";
 			          echo "<td><input type=\"button\" class=\"pure-button pure-button-active\" onclick=\"sendRequestArticulo(".$row['articuloId'].")\" value=\"Ver\">

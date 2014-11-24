@@ -46,6 +46,7 @@
 			<option value="maltratado">Maltratado</option>
 
 		</select><br><br>
+		Precio:  $ <input type="text" name="precio" placeholder="50" required>MXN<br><br>
 		Descripción:<textarea name="descripcion" rows="4" cols="50" required></textarea><br><br>
 		Calle: <input type="text" name="calle" placeholder="Ave. Mariano" required><br><br>
 		Estado: <!-- <input type="text" name="carrera" placeholder="ISC" required><br> -->

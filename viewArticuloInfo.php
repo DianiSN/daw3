@@ -4,7 +4,7 @@
 				$articuloId=$_GET['a'];
 				
 				$query = "SELECT `Articulo`.`nombre`, `Articulo`.`estadoArticulo`,`Articulo`.`descripcion`, `Articulo`.`calle`, `Estados`.`nombre` AS Estado, `Articulo`.`cuidad`, `Articulo`.`codigoPostal` 
-				FROM Articulo, Estados WHERE `Articulo`.`state` = `Estados`.`estadoId` AND `Articulo`.`articuloId`=".$articuloId;
+				FROM Articulo, Estados WHERE `Articulo`.`state` = `Estados`.`estadoId` AND `Articulo`.`articuloId`=".$articuloId."ORDER BY `Articulo`.`vendido` ASC" ;
 
 
 		        $result = mysqli_query($connection,$query);
@@ -26,7 +26,7 @@
 							frameborder=\"0\" style=\"border:0\"
 							src=\"https://www.google.com/maps/embed/v1/search?key=AIzaSyCgpoQUbukp62MU1dzkpglRN6bd1e_ZYW0&q=".$direcc."\">
 						</iframe><br>";
-					echo "<br><br><br><br><br><a class=\"pure-button pure-button-active\" id=\"email\" href=\"mailto:example@website.com?subject=".$row['nombre']."\">Contactá vendedor</a><br><br><br><br><br>";
+					echo "<br><br><br><br><br><a class=\"pure-button pure-button-primary\" id=\"email\" href=\"mailto:example@website.com?subject=".$row['nombre']."\">Contactá vendedor</a><br><br><br><br><br>";
 		          
 		        }
 
