@@ -19,6 +19,7 @@
         <li ><a href="viewAddArticulo.php">Agregar artículo</a></li>
         <li class="pure-menu-selected"><a href="displayArticulo.php">Mis artículos</a></li>
         <li ><a href="viewCompraArticulo.php">Artículos en venta</a></li>
+        <li class="pure-menu-selected" onClick="fbLogout()"> <a href="logout.php">LogOut </a></li>
     </ul>
 	</div>
 

@@ -14,43 +14,43 @@ session_start();
 <form action="check_register.php" method="post" name="form3">
 <table width="400">
 	
-<div><label>Nombres:</label>
+<div><h1><label>Nombres:</label></h1>
 
 <input type="text" name="Nombres" required></div>
 	
 
 	
-<div><label>Apellidos:</label>
+<div><h1><label>Apellidos:</label></h1>
 
 <input type="text" name="Apellidos" required></div>
 	
 
 	
-<div><label>Mail:</label>
+<div><h1><label>Mail:</label></h1>
 
 <input type="text" name="Mail" required></div>
 	
 
 	
-<div><label>Usuario:</label>
+<div><h1><label>Usuario:</label></h1>
 
 <input type="text" name="usuario" required></div>
 	
 
 	
-<div><label>Password:</label>
+<div><h1><label>Password:</label></h1>
 
 <input type="password" name="password" required></div>
 	
 
 	
-<div><label>Repetir Password:</label>
+<div><h1><label>Repetir Password:</label></h1>
 
 <input type="password" name="repassword" required></div>
 	
 
 
-<th><input type="submit" name="Register" value="Register" required></th>
+<th><input type="submit" name="Register" value="Registrar" required></th>
 
 </table>
 </form>

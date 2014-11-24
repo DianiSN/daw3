@@ -1,6 +1,7 @@
 <?php
 	session_start();
 ?>
+<title>Compra Todo</title>
 <form name="form3" method="post" action="checkface.php">
 <div id="fbname" name="fbname" hidden></div>
 <div id="fbid" name="fbid" hidden></div>
@@ -21,17 +22,15 @@
 
 <div id="mainlogin">
 <div id="or">or</div>
-<h1>CompraTodo</h1>
+<h1>Inicio de sesion</h1>
 <form method="post" action="checklogin.php">
 <input name="myusername" id="myusername" type="text" placeholder="username" value="" required>
 <input name="mypassword" id="mypassword" type="password" placeholder="password" value="" required>
 <button type="submit"><i class="fa fa-arrow-right">Login</i></button>
+<a href="register.php">Registrate!!! </a>
 </form>
 </div>
 </div>
-<form name="form2" method="post" action="register.php">
-<td><input type="submit" name="Registrate!" value="Registrate!"></td>
-</form>
 <td>
 </div>
 </td>

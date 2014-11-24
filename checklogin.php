@@ -37,6 +37,9 @@ $_SESSION["mypassword"]=$mypassword;
 header("location:displayArticulo.php");
 }
 else {
-echo "Wrong Username or Password";
+echo ("<SCRIPT LANGUAGE='JavaScript'>
+    window.alert('Los datos de inicio de sesión son erroneos')
+    window.location.href='./main_login.php';
+    </SCRIPT>");
 }
 ?>
