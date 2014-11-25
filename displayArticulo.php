@@ -77,7 +77,7 @@ session_start();
 		          echo "<td>" . $row['estadoArticulo'] . "</td>";
 		          echo "<td>  $ " . $row['precio'] . "</td>";
 		          echo "<td>" . $row['descripcion'] . "</td>";
-		          echo "<td><img width='10' height='10' src='$ruta'></td>";
+		          echo "<td><img width='50' height='50' src='$ruta'></td>";
 		          echo "<td>" . $row['calle'] . "<br>".$row['cuidad']. ",". $row['Estado']."<br>".$row['codigoPostal']."</td>";
 		          if($row['vendido']==0){
 		            echo "<td>Disponible<br>";

@@ -42,7 +42,9 @@ session_start();
 				include_once('connection.php');
 				//$userId=10152885393286882;
 				$userId=$_SESSION["fbid"];	
-				$query = "SELECT `Articulo`.`usuarioId`,`Articulo`.`articuloId`,`Articulo`.`nombre`, `Articulo`.`estadoArticulo`,`Articulo`.`precio`,`Articulo`.`descripcion`, `Articulo`.`calle`, `Estados`.`nombre` AS Estado, `Articulo`.`cuidad`, `Articulo`.`codigoPostal` FROM Articulo, Estados WHERE `Articulo`.`state` = `Estados`.`estadoId` AND `Articulo`.`vendido`=0";
+				$query = "SELECT `Articulo`.`usuarioId`,`Articulo`.`articuloId`,`Articulo`.`nombre`, `Articulo`.`estadoArticulo`,`Articulo`.`precio`,`Articulo`.`descripcion`, 
+						`Articulo`.`calle`, `Estados`.`nombre` AS Estado, `Articulo`.`cuidad`, `Articulo`.`codigoPostal`, `imagenes`.`ruta` AS Foto 
+				FROM Articulo, Estados, imagenes WHERE `Articulo`.`state` = `Estados`.`estadoId` AND `Articulo`.`vendido`=0 AND `Articulo`.`articuloId` = `imagenes`.`articuloId`";
 
 
 		        $result = mysqli_query($connection,$query);
@@ -54,6 +56,7 @@ session_start();
         		<th>Estado</th>
         		<th>Precio</th>
         		<th>Descripción</th>
+        		<th>Foto</th>
         		<th>Ubicación</th>
         		<th>Disponibilidad</th>
         		</tr>
@@ -61,11 +64,13 @@ session_start();
 
 		        while($row = mysqli_fetch_array($result)) {
 		        	if($row['usuarioId']!=$userId){
+		        	  	$ruta = $row['Foto'];
 			          echo "<tr>";
 			          echo "<td>" . $row['nombre'] . "</td>";
 			          echo "<td>" . $row['estadoArticulo'] . "</td>";
 			          echo "<td>$" . $row['precio'] . " MXN</td>";
 			          echo "<td>" . $row['descripcion'] . "</td>";
+			          echo "<td><img width='50' height='50' src='$ruta'></td>";
 			          echo "<td>" . $row['calle'] . "<br>".$row['cuidad']. ",". $row['Estado']."<br>".$row['codigoPostal']."</td>";
 			          echo "<td><input type=\"button\" class=\"pure-button pure-button-active\" onclick=\"sendRequestArticulo(".$row['articuloId'].")\" value=\"Ver\">
 			          </td>";
