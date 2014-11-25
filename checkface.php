@@ -38,7 +38,8 @@ if (isset($_GET["w1"]) && isset($_GET["w2"])) {
 		$fbname=$_GET["w1"];
 		$sql3="INSERT INTO `$db_name`.`$tbl_name` (`idusuario`, `nombres`, `apellidos`, `usuario`, `password`, `email`, `fbId`) VALUES ('', '$fbname', '', '', '', '', '$fbide')";
 		$insertar=mysqli_query($connection, $sql3);
-		header("location:mail.php");
+		$_SESSION["fbid"]=$fbide;
+		header("location:displayArticulo.php");
 	}
 	
 }

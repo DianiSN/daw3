@@ -10,6 +10,7 @@ session_start();
 		<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<script type="text/javascript" src="ajax.js"></script>
+		<script type="text/javascript" src="fb.js"></script>
 		<title>Artículos en venta</title>	
 	</head>
 	<header></header>
