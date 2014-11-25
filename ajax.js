@@ -67,7 +67,7 @@ function sendDeleteArticulo(articuloId){
    if(request!=null)
    {
      
-      
+      //test
      var url='deleteArticulo.php?a='+articuloId;
      request.open('GET',url,true);
      request.onreadystatechange = 
