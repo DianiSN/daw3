@@ -45,7 +45,7 @@ function sendVenderArticulo(articuloId,user){
    {
      
       
-     var url='controlVendido.php?a='+articuloId+"&s="+user;
+     var url='controlVendido.php?a='+articuloId;
      request.open('GET',url,true);
      request.onreadystatechange = 
             function() { 
