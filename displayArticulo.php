@@ -46,9 +46,9 @@ session_start();
 				//$userId=strtoupper($user);
 
 				$usuario = mysqli_real_escape_string($connection, $userId);
-		        $query="SELECT `Articulo`.`articuloId`,`Articulo`.`nombre`, `Articulo`.`estadoArticulo`,`Articulo`.`precio`,`Articulo`.`descripcion`, `Articulo`.`calle`, `Estados`.`nombre` AS Estado, `Articulo`.`cuidad`, `Articulo`.`codigoPostal`,`Articulo`.`vendido`  
-		                FROM Articulo, Estados 
-		                WHERE `Estados`.`estadoId` = `Articulo`.`state` AND `Articulo`.`usuarioId` = $usuario";
+		        $query="SELECT `Articulo`.`articuloId`,`Articulo`.`nombre`, `Articulo`.`estadoArticulo`,`Articulo`.`precio`,`Articulo`.`descripcion`, `Articulo`.`calle`, `Estados`.`nombre` AS Estado, `Articulo`.`cuidad`, `Articulo`.`codigoPostal`,`Articulo`.`vendido`, `imagenes`.`ruta` AS Foto  
+		                FROM Articulo, Estados, imagenes 
+		                WHERE `Estados`.`estadoId` = `Articulo`.`state` AND `Articulo`.`usuarioId` = $usuario AND `Articulo`.`articuloId` = `imagenes`.`articuloId`";
 		        
 		        // var_dump($usuario);                        
 		         //echo $query;
@@ -63,6 +63,7 @@ session_start();
         		<th>Estado</th>
         		<th>Precio</th>
         		<th>Descripción</th>
+        		<th>Foto</th>
         		<th>Ubicación</th>
         		<th>Disponibilidad</th>
         		</tr>
@@ -70,12 +71,13 @@ session_start();
 
 
 		        while($row = mysqli_fetch_array($result)) {
+		        	$ruta = $row['Foto'];
 		          echo "<tr>";
 		          echo "<td>" . $row['nombre'] . "</td>";
-		           //echo "<td>" . $row['articuloId'] . "</td>";
 		          echo "<td>" . $row['estadoArticulo'] . "</td>";
 		          echo "<td>  $ " . $row['precio'] . "</td>";
 		          echo "<td>" . $row['descripcion'] . "</td>";
+		          echo "<td><img width='10' height='10' src='$ruta'></td>";
 		          echo "<td>" . $row['calle'] . "<br>".$row['cuidad']. ",". $row['Estado']."<br>".$row['codigoPostal']."</td>";
 		          if($row['vendido']==0){
 		            echo "<td>Disponible<br>";
