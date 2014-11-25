@@ -2,26 +2,30 @@
 				session_start();
 				include_once('connection.php');
 				$articuloId=$_GET['a'];
-				$userId=$_SESSION["fbid"];	
+				//$userId=$_SESSION["fbid"];	
 				//$mail=$_SESSION["mail"];
 				//echo "mail:".$mail;
 
 				
 				
-				$query = "SELECT `Articulo`.`nombre`,`Articulo`.`vendido`, `Articulo`.`estadoArticulo`,`Articulo`.`precio`,`Articulo`.`descripcion`, `Articulo`.`calle`, `Estados`.`nombre` AS Estado, `Articulo`.`cuidad`, `Articulo`.`codigoPostal` 
+				$query = "SELECT `Articulo`.`usuarioId`,`Articulo`.`nombre`,`Articulo`.`vendido`, `Articulo`.`estadoArticulo`,`Articulo`.`precio`,`Articulo`.`descripcion`, `Articulo`.`calle`, `Estados`.`nombre` AS Estado, `Articulo`.`cuidad`, `Articulo`.`codigoPostal` 
 				FROM Articulo, Estados WHERE `Articulo`.`state` = `Estados`.`estadoId` AND `Articulo`.`articuloId`=".$articuloId." ORDER BY `Articulo`.`vendido` ASC" ;
-				$getMail="SELECT email FROM usuarios WHERE fbId=".$userId;
+				
+				
 				//echo "quesry:".$getMail;
 
 		        $result = mysqli_query($connection,$query);
-		        $resultMail = mysqli_query($connection,$getMail);
-
-		        while($rowMail = mysqli_fetch_array($resultMail)) {
-		        	$mail = $rowMail['email'];
-		        }
 		        
 
 		        while($row = mysqli_fetch_array($result)) {
+		        	$user=$row['usuarioId'];
+		        	$getMail="SELECT email FROM usuarios WHERE fbId=".$user;
+		        	$resultMail = mysqli_query($connection,$getMail);
+
+		        	while($rowMail = mysqli_fetch_array($resultMail)) {
+		        	$mail = $rowMail['email'];
+		        }
+		        
 		        	echo "<h2>" . $row['nombre'] . "</h2>";
 		          
 		          echo "<h3> Estado del articulo:</h3>" . $row['estadoArticulo']."<br>";

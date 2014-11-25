@@ -1,9 +1,11 @@
 <?php
-
+	session_start();
 				include_once('connection.php');
 				$articuloId=$_GET['a'];
-				$usuario=$_GET['s'];
-				$query ="UPDATE Articulo SET vendido=1 WHERE articuloId=$articuloId";
+				//$usuario=$_GET['s'];
+				$usuario=$_SESSION["fbid"];
+				$query ="DELETE FROM Articulo
+				WHERE articuloId=$articuloId";
 				
 				if (!mysqli_query($connection,$query)) {
     				die('Error: ' . mysqli_error($connection));
@@ -40,8 +42,7 @@
 		          echo "<td>" . $row['calle'] . "<br>".$row['cuidad']. ",". $row['Estado']."<br>".$row['codigoPostal']."</td>";
 		          if($row['vendido']==0){
 		            echo "<td>Disponible<br>";
-		             echo "<input type=\"button\" class=\"pure-button pure-button-active\" onclick=\"sendVenderArticulo(".$row['articuloId'].",".$usuario.")\" value=\"Vendido\"><br>";
-		            echo "<input type=\"button\" class=\"pure-button pure-button-active\" onclick=\"sendDeleteArticulo(".$row['articuloId'].")\" value=\"Borrar\"></td>";
+		            
 		            //echo "     <input type=\"button\" class=\"pure-button pure-button-active\" onclick=\"sendRequestArticulo(".$row['articuloId'].")\" value=\"Borrar\"></td>";
 		            
 		            

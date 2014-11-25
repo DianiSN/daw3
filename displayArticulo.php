@@ -86,7 +86,7 @@ session_start();
 		          if($row['vendido']==0){
 		            echo "<td>Disponible<br>";
 		            echo "<input type=\"button\" class=\"pure-button pure-button-active\" onclick=\"sendVenderArticulo(".$row['articuloId'].",".$usuario.")\" value=\"Vendido\"><br>";
-		            //echo "     <input type=\"button\" class=\"pure-button pure-button-active\" onclick=\"sendRequestArticulo(".$row['articuloId'].")\" value=\"Borrar\"></td>";
+		            echo "<input type=\"button\" class=\"pure-button pure-button-active\" onclick=\"sendDeleteArticulo(".$row['articuloId'].")\" value=\"Borrar\"></td>";
 		            
 		            
 		          }else{

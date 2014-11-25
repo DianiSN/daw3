@@ -59,3 +59,26 @@ function sendVenderArticulo(articuloId,user){
      request.send(null);
    }
 }
+
+
+function sendDeleteArticulo(articuloId){
+
+   request=getRequestObject();
+   if(request!=null)
+   {
+     
+      
+     var url='deleteArticulo.php?a='+articuloId;
+     request.open('GET',url,true);
+     request.onreadystatechange = 
+            function() { 
+                if((request.readyState==4)){
+                    // Asynchronous response has arrived
+                    var ajaxResponse=document.getElementById('response');
+                    ajaxResponse.innerHTML=request.responseText;
+                    ajaxResponse.style.visibility="visible";
+                }     
+            };
+     request.send(null);
+   }
+}
