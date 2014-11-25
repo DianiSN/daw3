@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 	
@@ -19,7 +22,7 @@
         <li ><a href="viewAddArticulo.php">Agregar artículo</a></li>
         <li><a href="displayArticulo.php">Mis artículos</a></li>
         <li class="pure-menu-selected"><a href="viewCompraArticulo.php">Artículos en venta</a></li>
-        <li class="pure-menu-selected" onClick="fbLogout()"> <a href="logout.php">LogOut </a></li>
+        <li onClick="fbLogout()"> <a href="logout.php">LogOut </a></li>
     </ul>
 	</div>
 		<!-- <nav>
@@ -34,8 +37,10 @@
 		<div id="response" align="center">
 			
 			<?php
+			
 				include_once('connection.php');
-				$userId=10152885393286882;
+				//$userId=10152885393286882;
+				$userId=$_SESSION["fbid"];	
 				$query = "SELECT `Articulo`.`usuarioId`,`Articulo`.`articuloId`,`Articulo`.`nombre`, `Articulo`.`estadoArticulo`,`Articulo`.`precio`,`Articulo`.`descripcion`, `Articulo`.`calle`, `Estados`.`nombre` AS Estado, `Articulo`.`cuidad`, `Articulo`.`codigoPostal` FROM Articulo, Estados WHERE `Articulo`.`state` = `Estados`.`estadoId` AND `Articulo`.`vendido`=0";
 
 

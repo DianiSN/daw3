@@ -22,7 +22,7 @@ function sendRequestArticulo(articuloId){
    {
      
       
-     var url='ViewArticuloInfo.php?a='+articuloId;
+     var url='viewArticuloInfo.php?a='+articuloId;
      request.open('GET',url,true);
      request.onreadystatechange = 
             function() { 
@@ -37,56 +37,15 @@ function sendRequestArticulo(articuloId){
    }
 }
 
-function sendUpdateArticulo(articuloId){
 
-   request=getRequestObject();
-   if(request!=null)
-   {    
-     var url='modifyArticulo.php?a='+articuloId;
-     request.open('GET',url,true);
-     request.onreadystatechange = 
-            function() { 
-                if((request.readyState==4)){
-                    // Asynchronous response has arrived
-                    var ajaxResponse=document.getElementById('response');
-                    ajaxResponse.innerHTML=request.responseText;
-                    ajaxResponse.style.visibility="visible";
-                }     
-            };
-     request.send(null);
-   }
-}
-
-function sendDeleteArticulo(articuloId){
+function sendVenderArticulo(articuloId,user){
 
    request=getRequestObject();
    if(request!=null)
    {
      
       
-     var url='modifyArticulo.php?a='+articuloId;
-     request.open('GET',url,true);
-     request.onreadystatechange = 
-            function() { 
-                if((request.readyState==4)){
-                    // Asynchronous response has arrived
-                    var ajaxResponse=document.getElementById('response');
-                    ajaxResponse.innerHTML=request.responseText;
-                    ajaxResponse.style.visibility="visible";
-                }     
-            };
-     request.send(null);
-   }
-}
-
-function sendVenderArticulo(articuloId){
-
-   request=getRequestObject();
-   if(request!=null)
-   {
-     
-      
-     var url='ViewArticuloInfo.php?a='+articuloId;
+     var url='controlVendido.php?a='+articuloId+"&s="+user;
      request.open('GET',url,true);
      request.onreadystatechange = 
             function() { 
