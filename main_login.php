@@ -1,7 +1,18 @@
 <?php
 	session_start();
 ?>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Compra Todo</title>
+<p>
+<body>
+	<div class="logo-image" align="middle" >
+		<img  align="middle" src="imagenes/logo2.png" width="150" height="230" border="0" alt="CompraTodo" /></a>
+		<img  align="middle" src="imagenes/bienvenido.png" width="580" height="100" border="0" alt="Bienvenido" /></a>
+
+	</div>
+</p>
+
 <form name="form3" method="post" action="checkface.php">
 <div id="fbname" name="fbname" hidden></div>
 <div id="fbid" name="fbid" hidden></div>
@@ -10,6 +21,8 @@
 </form>
 
 
+<br>
+<br>
 <link rel="stylesheet" type="text/css" href="style2.css"/>
 
 <div id="loginform">
@@ -27,10 +40,12 @@
 <input name="myusername" id="myusername" type="text" placeholder="username" value="" required>
 <input name="mypassword" id="mypassword" type="password" placeholder="password" value="" required>
 <button type="submit"><i class="fa fa-arrow-right">Login</i></button>
-<a href="register.php">Registrate!!! </a>
+<a href="register.php">¡Registrate!</a>
 </form>
 </div>
 </div>
 <td>
 </div>
 </td>
+
+</body>

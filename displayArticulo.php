@@ -16,6 +16,9 @@ session_start();
 	<header></header>
 	<body>
 			<div class="pure-menu pure-menu-open pure-menu-horizontal">
+		<div class="logo-image">
+		<a href="viewCompraArticulo.php"><img  align="left"src="imagenes/logo.png" width="20" height="30" border="0" alt="CompraTodo" /></a>
+		</div>
     	<a href="viewCompraArticulo.php" class="pure-menu-heading">CompraTodo</a>
 
     <ul>

@@ -18,12 +18,8 @@ if (preg_match("/^[.áéíóúa-zA-Z0-9 ]*$/",$calle) && preg_match("/^[áéíó
   $sql="INSERT INTO Articulo (usuarioId, nombre, estadoArticulo, precio, descripcion, calle, state, cuidad, codigoPostal,vendido)
   VALUES ('$userId','$articulo', '$estArticulo','$precio', '$descripcion','$calle', '$estado', '$cuidad', '$cp','0')";
 
-  if (!mysqli_query($connection,$sql)) {
+  if (!mysqli_query($connection,$sql)) 
     die('Error: ' . mysqli_error($connection));
-  }else{
-    //echo $userId;
-    include('displayArticulo.php');
-  }
         
 
 }else{
@@ -51,4 +47,5 @@ mysql_connect("localhost", "root", "");
 mysql_select_db("pd3");
 mysql_query("Insert INTO imagenes Values($idArt,'$destino')");
 
+include('displayArticulo.php');
 ?>
