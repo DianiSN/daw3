@@ -31,4 +31,24 @@ if (preg_match("/^[.áéíóúa-zA-Z0-9 ]*$/",$calle) && preg_match("/^[áéíó
   echo "Por favor llenar la forma correctamente.\n Regrese a la página anterior para hacer correcciones.";
       
 }
+
+				
+		
+$query="SELECT `articuloId`
+        FROM Articulo 
+        WHERE `usuarioId` = $userId AND `nombre` = '$articulo' AND `precio` = $precio";
+
+$result = mysqli_query($connection,$query);
+
+while($row = mysqli_fetch_array($result)) {
+  $idArt = $row['articuloId'];
+}
+
+$archivo = $_FILES['flsImagen']['tmp_name'];
+$destino = "imagenes/". $_FILES['flsImagen']['name'];
+move_uploaded_file($archivo, $destino);
+mysql_connect("localhost", "root", "");
+mysql_select_db("pd3");
+mysql_query("Insert INTO imagenes Values($idArt,'$destino')");
+
 ?>

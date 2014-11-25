@@ -33,7 +33,7 @@
 		<h2>Nuevo artículo</h2>
 		
 		<div id="response" align="center">
-		<form class="pure-form" action="insertArticulo.php" method="post" id="registrar">
+		<form class="pure-form" action="insertArticulo.php" method="post" id="registrar" enctype="multipart/form-data">
 
 		
 		Artículo: <input type="text" name="articulo" placeholder="plancha Mabe" onchange="fbId()" required><br><br>
@@ -48,6 +48,12 @@
 		</select><br><br>
 		Precio:  $ <input type="text" name="precio" placeholder="50" required>MXN<br><br>
 		Descripción:<textarea name="descripcion" rows="4" cols="50" required></textarea><br><br>
+
+		<label>Imagen: </label>
+		<input type="file" name="flsImagen" required> 
+		<br>
+		<br>
+
 		Calle: <input type="text" name="calle" placeholder="Ave. Mariano" required><br><br>
 		Estado: <!-- <input type="text" name="carrera" placeholder="ISC" required><br> -->
 		
@@ -83,7 +89,7 @@
 <br>
 		
 
-		<input type="submit" class="pure-button pure-button-active" value="Registrar">
+		<input name= "registro" type="submit" class="pure-button pure-button-active" value="Registrar">
 		
 		<input type="reset" class="pure-button pure-button-active" value="Limpiar" id="reset">
 		</form>
