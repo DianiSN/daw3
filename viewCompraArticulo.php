@@ -25,6 +25,7 @@ session_start();
         <li ><a href="viewAddArticulo.php">Agregar artículo</a></li>
         <li><a href="displayArticulo.php">Mis artículos</a></li>
         <li class="pure-menu-selected"><a href="viewCompraArticulo.php">Artículos en venta</a></li>
+        <li><a href="diagrama.php">Diagrama</a></li>
         <li onClick="fbLogout()"> <a href="logout.php">LogOut </a></li>
     </ul>
 	</div>
