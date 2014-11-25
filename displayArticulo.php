@@ -16,7 +16,7 @@ session_start();
 	<header></header>
 	<body>
 			<div class="pure-menu pure-menu-open pure-menu-horizontal">
-    	<a href="displayArticulo.php" class="pure-menu-heading">CompraTodo</a>
+    	<a href="viewCompraArticulo.php" class="pure-menu-heading">CompraTodo</a>
 
     <ul>
         
